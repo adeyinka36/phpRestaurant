@@ -1,0 +1,95 @@
+body{
+    overflow-x: hidden;
+    
+}
+footer{
+    height: 10vh;
+    @include flex-center;
+    color:$font-color;
+    
+    p{
+        font-size: 2rem;
+      font-family: $small-headers;
+    }
+}
+@keyframes drop {
+    0% {transform:translateY(-500px);}
+    100% {transform:translateY(0px);}
+}
+
+.effect{
+    position:fixed;
+    top:0px;
+    left:0px;
+    height: 100vh;
+    width:100vw;
+    background-color: $page-color;
+    font-family: $header-font;
+    font-size: 3rem;
+    @include flex-center;
+    color: $font-color;
+    transition:1s;
+    opacity:1;
+}
+
+header{
+    position:relative;
+    width: 100vw;
+    height:7vh;
+    font-family: $header-font;
+    color: $font-color;
+    display: flex;
+    z-index: 2;
+    flex-direction:column;
+    .logo-menu{
+        background-color:$page-color;
+        @include flex-between;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        span{
+            font-size: 2rem;
+             
+        }
+
+    }
+    
+    h1{
+        display: inline-block;
+    }
+    
+
+    .menu-items{
+       
+        transition:.41s ease-out;
+       background-color: $page-color;
+       
+        li{
+            font-size: 1.1rem;
+            @include flex-center;
+            height: 3rem;
+            background-color:$page-color;
+            
+        }
+        a{
+            text-decoration: none;
+            color:white;
+            
+        }
+       
+      
+       transform: translateY(-200%);
+        opacity: 0;
+        visibility: hidden;
+
+    }
+
+}
+
+
+
+.con-index{
+    height: 100vh;
+    @include background-image("../images/food.jpg");
+    height: 100vh;
+
+}

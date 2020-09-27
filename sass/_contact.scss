@@ -1,0 +1,30 @@
+.con-contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+    font-family: $small-fonts;
+    color:$font-color;
+    height:120vh;
+    
+    span{
+        font-size: 2rem;
+    }
+    .fab{
+        font-size:3rem ;
+    }
+    span{
+        text-align: center;
+    }
+    ul{
+        width: 40%;
+        display:flex;
+        justify-content: space-around;
+    }
+    .map{
+        iframe{
+        height: 50vh;
+        overflow: hidden;
+        }
+    }
+}

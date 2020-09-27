@@ -1,0 +1,20 @@
+@mixin flex-wide{
+    display: flex;
+    justify-content: space-around;
+}
+@mixin flex-between{
+    display:flex;
+    justify-content:space-between;
+}
+@mixin flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin background-image($href){
+    background-image: url($href);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

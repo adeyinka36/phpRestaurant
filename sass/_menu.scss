@@ -1,0 +1,12 @@
+.menu-download{
+    border: 1.5px solid black;
+    margin:.5rem;
+    h2{
+        color:$font-color;
+        margin:1rem;
+        &:hover{
+            cursor: pointer;
+            color: darkgrey;
+        }
+    }
+}
