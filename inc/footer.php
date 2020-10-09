@@ -1,13 +1,13 @@
 <footer>
 
 <?php $time= date("H");
-     if($time>23 or $time< 6){?>
-        <p>We are now closed!</p>
-    <?php }?>
-    <?php 
-     if($time>6 or $time< 23){?> 
-       <p>We are open!</p>
-     <?php }?>
+     if($time <=6 ){
+       echo "<p>We are now closed!</p>";
+      }
+    else {
+       
+      echo "<p> We are open!</p>";
+     }?>
     
 </footer>
 

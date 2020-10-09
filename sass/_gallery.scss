@@ -1,7 +1,9 @@
 .con-gallery{
+    padding-top:2rem;
+    height: 90vh;
     @include flex-center;
     .fas{
-        font-size:2rem;
+        font-size:4rem;
         position: absolute;
         color:$font-color;
      }
@@ -10,11 +12,11 @@
          color: darkslategray;
      }
      .prev{
-         left:0px;
+         left:1rem;
 
      }
      .next{
-         right:0px;
+         right:1rem;
      }
 }
 .carousel{
@@ -37,4 +39,17 @@
     }
 
     
+}
+
+.cancel{
+    position: fixed;
+    top:1rem;
+    right:1.5rem;
+    font-size: 3rem;
+    color:red;
+    transition: .25s;
+    &:hover{
+        cursor: pointer;
+        transform:scale(1.4)
+    }
 }

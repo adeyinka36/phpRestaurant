@@ -12,6 +12,7 @@
     align-items: center;
 }
 
+
 @mixin background-image($href){
     background-image: url($href);
     background-position: center;

@@ -86,3 +86,20 @@ onload=()=>{
 
 
 }
+
+
+function getBaseUrl() {
+    let re = new RegExp(/^.*\//);
+    return re.exec(window.location.href);
+}
+
+
+
+const cancelIcon=document.getElementsByClassName("cancel")[0];
+
+cancelIcon.addEventListener("click",(e)=>{
+    let  ref=getBaseUrl();
+    ref=ref[0];
+     window.location = `${ref}index.php`
+    
+})

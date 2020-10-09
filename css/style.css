@@ -39,12 +39,66 @@ footer {
   align-items: center;
   color: #E0E0E0;
   transition: 1s;
-  opacity: 1; }
+  opacity: 1;
+  z-index: 100; }
+
+.icons {
+  font-family: "Peddana", serif;
+  color: #E0E0E0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  visibility: hidden; }
+  .icons span {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+    align-items: center; }
+    .icons span a {
+      margin-left: .6rem;
+      margin-right: .6rem;
+      position: absolute;
+      transition: 1s;
+      right: 100%;
+      font-size: 3.3rem;
+      transition: opacity .7s; }
+  .icons .inner-icon {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-right: 1rem;
+    padding-right: .5rem; }
+    .icons .inner-icon .fas {
+      opacity: .5; }
+    .icons .inner-icon span .right {
+      transition: .5s; }
+    .icons .inner-icon span:hover {
+      cursor: pointer; }
+    .icons .inner-icon span:hover .right {
+      transform: scale(0.5); }
+
+@keyframes menu-slide {
+  0% {
+    right: -500%;
+    opacity: 0; }
+  25% {
+    right: -300%;
+    opacity: .2; }
+  100% {
+    right: 100%;
+    opacity: 1; } }
+.menu-animate:hover .flash {
+  animation: menu-slide 1s ease-out forwards; }
 
 header {
   position: relative;
-  width: 100vw;
-  height: 7vh;
   font-family: "Roboto", sans-serif;
   color: #E0E0E0;
   display: flex;
@@ -57,15 +111,18 @@ header {
     padding-right: 1rem;
     padding-left: 1rem; }
     header .logo-menu span {
-      font-size: 2rem; }
+      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
   header h1 {
     display: inline-block; }
   header .menu-items {
     transition: .41s ease-out;
     background-color: #202020;
-    transform: translateY(-200%);
-    opacity: 0;
-    visibility: hidden; }
+    top: -700%;
+    position: absolute;
+    width: 100%; }
     header .menu-items li {
       font-size: 1.1rem;
       display: flex;
@@ -79,7 +136,7 @@ header {
 
 .con-index {
   height: 100vh;
-  background-image: url("../images/food.jpg");
+  background-image: url("../images/image4.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -105,6 +162,9 @@ header {
       font-family: "Rancho", cursive;
       font-size: 1.5rem; }
 
+.con-about {
+  height: auto; }
+
 .menu-download {
   border: 1.5px solid black;
   margin: .5rem; }
@@ -115,21 +175,26 @@ header {
       cursor: pointer;
       color: darkgrey; }
 
+.menu-download {
+  margin-top: 3.5rem; }
+
 .con-gallery {
+  padding-top: 2rem;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center; }
   .con-gallery .fas {
-    font-size: 2rem;
+    font-size: 4rem;
     position: absolute;
     color: #E0E0E0; }
   .con-gallery .fas:hover {
     cursor: pointer;
     color: darkslategray; }
   .con-gallery .prev {
-    left: 0px; }
+    left: 1rem; }
   .con-gallery .next {
-    right: 0px; }
+    right: 1rem; }
 
 .carousel {
   margin: auto;
@@ -145,6 +210,17 @@ header {
     object-fit: contain;
     right: 100%;
     transition: 1s; }
+
+.cancel {
+  position: fixed;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 3rem;
+  color: red;
+  transition: .25s; }
+  .cancel:hover {
+    cursor: pointer;
+    transform: scale(1.4); }
 
 .con-contact {
   display: flex;
@@ -165,7 +241,21 @@ header {
     display: flex;
     justify-content: space-around; }
   .con-contact .map iframe {
-    height: 50vh;
+    height: 60vh;
+    width: 70vw;
     overflow: hidden; }
+
+@media (min-width: 768px) {
+  header {
+    display: none; }
+
+  footer p {
+    font-size: 5rem; }
+
+  .icons {
+    visibility: visible; }
+
+  .con-about {
+    height: 90vh; } }
 
 /*# sourceMappingURL=style.css.map */

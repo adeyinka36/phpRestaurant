@@ -10,17 +10,13 @@ header.addEventListener("click",(e)=>{
     console.log(e.target.tagName);
     if(e.target.tagName=="I"){
         if(drop==false){
-            menuItems.style.opacity="1";
-            menuItems.style.transform="translateY(0px)";
-            menuItems.style.visibility="visible";
+            menuItems.style.top="100%"
             
             drop=true;
         }
 
         else if(drop==true){
-            menuItems.style.opacity="0";
-            menuItems.style.transform="translateY(-200%)";
-                menuItems.style.visibility="hidden";
+            menuItems.style.top="-700%"
             drop=false;
         }
 
@@ -29,6 +25,15 @@ header.addEventListener("click",(e)=>{
 
 })
 
+
+
+
+body.addEventListener("click",(e)=>{
+   if(e.target.classList.contains("container")){
+    menuItems.style.top="-700%"
+        drop=false;
+    }
+})
 
 
 
@@ -44,3 +49,52 @@ body.addEventListener("click",(e)=>{
 })
 
 
+onload=()=>{
+  
+    let flashItems = document.getElementsByClassName("flash");
+    flashItems=Array.from(flashItems);
+    
+function showMenu(){
+    flashItems.forEach(item => {
+        setTimeout(()=>{
+            item.style.opacity="0";
+        },0)
+        
+    });
+
+}
+
+    setTimeout(showMenu,3000)
+
+    
+
+    setTimeout(()=>{
+        let circles = document.getElementsByClassName("circle");
+         circles=Array.from(circles);
+
+         circles.forEach(item=>{
+             item.classList.add("menu-animate")
+         })
+    },3200)
+    
+}
+
+
+function getBaseUrl() {
+    let re = new RegExp(/^.*\//);
+    return re.exec(window.location.href);
+}
+
+const circ = Array.from(document.getElementsByClassName("circle"));
+
+circ.forEach(item=>{
+    item.addEventListener("click",(e)=>{
+        let ref = getBaseUrl();
+        ref = ref[0];
+        let text= e.target.previousElementSibling.innerText.toLowerCase();
+         window.location = `${ref}${text}.php`
+        
+    
+    })
+
+})
